@@ -98,26 +98,26 @@ export default function Sidebar({ user, page}) {
     {page.isMobile ? (
       <Switch>
         <Route path="/chats">
-          <SidebarList />
+          <SidebarList title="Chats" data={[]} />
         </Route>
         <Route path="/rooms">
-          <SidebarList />
+          <SidebarList title="Rooms" data={rooms} />
         </Route>
         <Route path="/users">
-          <SidebarList />
+          <SidebarList title="Users" data={[]} />
         </Route>
         <Route path="/search">
-          <SidebarList />
+          <SidebarList title="Search Results" data={[]} />
         </Route>
       </Switch>
     ) : menu === 1 ? (
-      <SidebarList/>
+      <SidebarList title="Chats" data={[]}/>
     ) : menu === 2 ? (
-      <SidebarList />
+      <SidebarList title="Rooms" data={rooms} />
     ) : menu === 3 ? (
-      <SidebarList />
+      <SidebarList title="Users" data={[]} />
     ): menu === 4 ? (
-      <SidebarList />
+      <SidebarList title="Search Results" data={[]} />
     ) : null}
 
     <div className="sidebar__chat--addRoom">

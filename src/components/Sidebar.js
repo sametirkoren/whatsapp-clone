@@ -5,9 +5,12 @@ import { auth, createTimestamp, db } from "../firebase";
 import SidebarList from '../components/SidebarList';
 import "./Sidebar.css";
 import { NavLink, Switch, Route } from 'react-router-dom';
+import useRooms from "../hooks/useRooms";
 
 
 export default function Sidebar({ user, page}) {
+  const rooms = useRooms();
+  console.log(rooms);
   const [menu, setMenu] = React.useState(1);
   function signOut() {
     auth.signOut();

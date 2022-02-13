@@ -1,5 +1,10 @@
+import { CloseRounded } from "@material-ui/icons";
 import "./MediaPreview.css";
 
-export default function MediaPreview() {
-  return <div className="mediaPreview">MediaPreview</div>;
+export default function MediaPreview({src, closePreview}) {
+  if(!src) return null;
+  return <div className="mediaPreview">
+    <CloseRounded  onClick={closePreview}/>
+    <img src={src} alt="Preview" />
+  </div>;
 }
